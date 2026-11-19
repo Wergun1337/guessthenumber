@@ -50,14 +50,23 @@ const guessgame = function () {
                 guessTheNumber();
                 return;
             } else if (guessedNumber === randomNumber) {
-                alert("Поздравляю, Вы угадали!!! Хотели бы сыграть еще?");
-                guessgame();
-                return;
+
+                if (cofirm("Поздравляю, Вы угадали!!! Хотели бы сыграть еще?")) {
+                    guessgame();
+                    return;
+                } else {
+                    alert("Игра окончена");
+                    return;
+                }
             }
         } else {
-            alert("Попытки закончились, хотите сыграть еще?")
-            guessgame();
-            return
+            if (confirm("Попытки закончились, хотите сыграть еще?")) {
+                guessgame();
+                return
+            } else {
+                alert("Игра окончена");
+                return;
+            }
         };
     }
     randomNumber = getRandomNumber();
