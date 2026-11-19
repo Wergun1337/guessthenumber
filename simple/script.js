@@ -51,7 +51,6 @@ const guessgame = function () {
         }
     };
 
-    randomNumber = getRandomNumber();
     guessTheNumber();
 }
 
